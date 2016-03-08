@@ -1,0 +1,16 @@
+{
+  "name": "donkeyworks-biometric",
+  "version": "0.0.1",
+  "description": "Cordova plugin to communicate with Biometric Device",
+  "cordova": {
+    "id": "com.donkeyworks.biomeric",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "serial"
+  ],
+  "author": "DonkeyWorks",
+  "license": "MIT"
+}

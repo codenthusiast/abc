@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    id="com.donkeyworks.biometric"
+    version="0.0.1">
+    <name>Biometric</name>
+    <description>Cordova plugin to communicate with Biometric Device</description>
+    <license>MIT</license>
+    <keywords>serial,biometric</keywords>
+
+    <!-- js module -->
+    <js-module src="www/serial.js" name="Serial">
+        <clobbers target="window.serial" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Serial">
+                <param name="android-package" value="com.donkeyworks.biomeric"/>
+            </feature>
+        </config-file>
+        
+        <source-file src="src/android/fr/drangies/cordova/serial/Serial.java" target-dir="src/fr/drangies/cordova/serial" />
+        <source-file src="src/android/fr/drangies/cordova/serial/UsbBroadcastReceiver.java" target-dir="src/fr/drangies/cordova/serial" />
+
+        <source-file src="src/android/com/futronictech/Scanner.java" target-dir="src/com/futronictech" />
+        <source-file src="src/android/com/futronictech/UsbDeviceDataExchangeImpl.java" target-dir="src/com/futronictech" />
+        <source-file src="src/android/com/hoho/android/usbserial/BuildInfo.java" target-dir="src/com/hoho/android/usbserial" />
+
+        <source-file src="src/android/com/hoho/android/usbserial/driver/CdcAcmSerialDriver.java" target-dir="src/com/hoho/android/usbserial/driver" />
+        <source-file src="src/android/com/hoho/android/usbserial/driver/CommonUsbSerialPort.java" target-dir="src/com/hoho/android/usbserial/driver" />
+        <source-file src="src/android/com/hoho/android/usbserial/driver/Cp21xxSerialDriver.java" target-dir="src/com/hoho/android/usbserial/driver" />
+        <source-file src="src/android/com/hoho/android/usbserial/driver/FtdiSerialDriver.java" target-dir="src/com/hoho/android/usbserial/driver" />
+        <source-file src="src/android/com/hoho/android/usbserial/driver/ProbeTable.java" target-dir="src/com/hoho/android/usbserial/driver" />
+        <source-file src="src/android/com/hoho/android/usbserial/driver/ProlificSerialDriver.java" target-dir="src/com/hoho/android/usbserial/driver" />
+        <source-file src="src/android/com/hoho/android/usbserial/driver/UsbId.java" target-dir="src/com/hoho/android/usbserial/driver" />
+        <source-file src="src/android/com/hoho/android/usbserial/driver/UsbSerialDriver.java" target-dir="src/com/hoho/android/usbserial/driver" />
+        <source-file src="src/android/com/hoho/android/usbserial/driver/UsbSerialPort.java" target-dir="src/com/hoho/android/usbserial/driver" />
+        <source-file src="src/android/com/hoho/android/usbserial/driver/UsbSerialProber.java" target-dir="src/com/hoho/android/usbserial/driver" />
+        <source-file src="src/android/com/hoho/android/usbserial/driver/UsbSerialRuntimeException.java" target-dir="src/com/hoho/android/usbserial/driver" />
+
+        <source-file src="src/android/com/hoho/android/usbserial/util/HexDump.java" target-dir="src/com/hoho/android/usbserial/util" />
+        <source-file src="src/android/com/hoho/android/usbserial/util/SerialInputOutputManager.java" target-dir="src/com/hoho/android/usbserial/util" />
+
+        <source-file src="lib/armeabi/libftrScanAPI.so" target-dir="libs/armeabi" />
+        <source-file src="lib/armeabi/libftrScanApiAndroidJni.so" target-dir="libs/armeabi" />
+        <source-file src="lib/armeabi/libftrWSQAndroid.so" target-dir="libs/armeabi" />
+        <source-file src="lib/armeabi/libftrWSQAndroidJni.so" target-dir="libs/armeabi" />
+        <source-file src="lib/armeabi/libusb-1.0.so" target-dir="libs/armeabi" />
+        <source-file src="lib/armeabi-v7a/libftrScanAPI.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="lib/armeabi-v7a/libftrScanApiAndroidJni.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="lib/armeabi-v7a/libftrWSQAndroid.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="lib/armeabi-v7a/libftrWSQAndroidJni.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="lib/armeabi-v7a/libusb-1.0.so" target-dir="libs/armeabi-v7a" />
+    </platform>
+</plugin>
